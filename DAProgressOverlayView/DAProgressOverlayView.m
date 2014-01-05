@@ -141,7 +141,7 @@ CGFloat const DAUpdateUIFrequency = 1. / 25.;
 {
     if (_progress != progress) {
         _progress = (progress < 0.) ? 0. : (progress > 1.) ? 1. : progress;
-        if (progress > 0. && progress < 1.) {
+        if (progress > 0. && progress <= 1.) {
             self.state = DAProgressOverlayViewStateOperationInProgress;
             [self setNeedsDisplay];
         } else if (progress == 1. && self.triggersDownloadDidFinishAnimationAutomatically) {
